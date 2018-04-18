@@ -87,10 +87,12 @@ class Tag(TagBase):
 @python_2_unicode_compatible
 class ItemBase(models.Model):
     def __str__(self):
-        return ugettext("%(object)s tagged with %(tag)s") % {
-            "object": self.content_object,
-            "tag": self.tag
-        }
+#        return ugettext("%(object)s tagged with %(tag)s") % {
+#            "object": self.content_object,
+#            "tag": self.tag
+#        }
+
+        return str(self.tag)
 
     class Meta:
         abstract = True
